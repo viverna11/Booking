@@ -1,0 +1,6 @@
+<h1> header </h1>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<a href="{% url 'book_room' %}"><button class="main-page-btn">забронювати кімнату</button></a>
+<a href="{% url 'room_list' %}"><button class="main-page-btn">повернутия на головну сторінку</button></a>

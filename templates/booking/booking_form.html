@@ -1,4 +1,7 @@
-    <form method="POST" action="{% url 'book_room' %}">
+{% include "base.html" %}
+{% block content %}
+
+<form method="POST" action="{% url 'book_room' %}">
         {% csrf_token %}
         <div>
             <label for="room-number">Room number:</label>
@@ -16,3 +19,4 @@
         </div>
         <button type="submit"> book room</button>
     </form>
+{% endblock %}
