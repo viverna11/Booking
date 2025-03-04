@@ -1,7 +1,8 @@
 {% include "base.html" %}
 {% block content %}
-
-<div>
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="container center">
     <h1>room number: {{ room.number }}</h1>
     <h2>room capacity: {{ room.capacity }}</h2>
     <h3>room price: {{ room.price }}</h3>

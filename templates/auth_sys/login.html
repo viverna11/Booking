@@ -1,12 +1,19 @@
 {% include "base.html" %}
 {% block content %}
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-<form method="post">
-    {% csrf_token %}
-    <input type="text" name="username" placeholder="login" required>
-    <input type="password" name="password" placeholder="password" required>
-    <button type="submit">"Залогінитися"</button>
-    </form>
+<div class="container center">
+        <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="login" required 
+        class="margin">
+         <input type="password" name="password" placeholder="password" required 
+        class="">
+        <button type="submit" class="margin">"Залогінитися"</button>
+        </form>
+</div>   
+     
 {% if messages %}
     {% for message in messages %}
         <p>{{ message }}</p>

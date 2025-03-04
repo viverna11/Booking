@@ -1,9 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="container-list">
     {% for room in rooms %}
-        <a href="{% url 'room_details' room.pk %}"><h1>{{ room.number}}</h1></a>
-        <h2>room capacity: {{ room.capacity }}</h2>
-    {% endfor %}
-
+    <a href="{% url 'room_details' room.pk %}" >
+    <div class="container-for-object">  
+        <h1>{{ room.number}}</h1>
+        <h2 class="header-body">room capacity: {{ room.capacity }}</h2>
+    </div> 
+    </a>
+     {% endfor %}
+</div>
 {% endblock %}

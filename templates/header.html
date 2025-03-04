@@ -1,11 +1,14 @@
-<h1> header </h1>
-{% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-<a href="{% url 'book_room' %}"><button class="main-page-btn">забронювати кімнату</button></a>
-<a href="{% url 'room_list' %}"><button class="main-page-btn">повернутия на головну сторінку</button></a>
-{% if request.user.is_authenticated %}
-        <a href="{% url 'logout' %}">Вийти</a>
-{% else %}
-        <a href="{% url 'login' %}">Увійти</a>
-{% endif %}
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="header-div">
+        <div class="left-cont">
+        <a href="{% url 'book_room' %}"><button class="main-page-btn margin">забронювати кімнату</button></a>
+        <a href="{% url 'room_list' %}"><button class="main-page-btn margin">повернутия на головну сторінку</button></a>
+        </div>
+        {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}" ><button class="exit-button margin">Вийти</button></a>
+        {% else %}
+                <a href="{% url 'login' %}"><button class="enter-button margin">Увійти</button></a>
+        {% endif %}
+</div>

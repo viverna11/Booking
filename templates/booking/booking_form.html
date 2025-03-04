@@ -1,9 +1,11 @@
 {% include "base.html" %}
 {% block content %}
-
-<form method="POST" action="{% url 'book_room' %}">
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="container center">      
+    <form method="POST" action="{% url 'book_room' %}">
         {% csrf_token %}
-        <div>
+        <div class="">
             <label for="room-number">Room number:</label>
             <input type="text" id="room-number" name="room-number">
         </div>
@@ -17,6 +19,7 @@
             <label for="end-time">End time:</label>
             <input type="datetime-local" id="end-time" name="end-time">
         </div>
-        <button type="submit"> book room</button>
+        <button type="submit" class="margin"> book room</button>
     </form>
+</div>  
 {% endblock %}
